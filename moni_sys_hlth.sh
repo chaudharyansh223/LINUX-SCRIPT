@@ -6,7 +6,7 @@ while true
 do
 	#log
 	top -bn1 | awk 'NR==3{print $0}' >> cpu.log
-	lsblk | awk 'NR==3{print $0}' >> disk.log
+	df -h | awk 'NR==3{print $0}' >> disk.log
 	free -h | awk 'NR==2{print $0}' >> memory.log
 
 	#variable
